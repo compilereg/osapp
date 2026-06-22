@@ -1,0 +1,28 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      user: actions/checkout@v3
+
+    - name: Build the docker image
+      users: mr-smithers-excellent/docker-build-push@v6
+      with:
+          image: compilereg/os-html-image
+          registry: docker.io
+          dockerfile: Dockerfile
+          username: ${{ secrets.USERNAME }}"
+          password: ${{ secrets.PASSWORD }}"
+          tags: latest
+      
