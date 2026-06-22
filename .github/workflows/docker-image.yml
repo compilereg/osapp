@@ -14,10 +14,10 @@ jobs:
 
     steps:
     - name: Checkout code
-      user: actions/checkout@v3
+      uses: actions/checkout@v3
 
     - name: Build the docker image
-      users: mr-smithers-excellent/docker-build-push@v6
+      uses: mr-smithers-excellent/docker-build-push@v6
       with:
           image: compilereg/os-html-image
           registry: docker.io
