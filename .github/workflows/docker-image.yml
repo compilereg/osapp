@@ -22,7 +22,7 @@ jobs:
           image: compilereg/os-html-image
           registry: docker.io
           dockerfile: Dockerfile
-          username: "${{ secrets.USERNAME }}"
+          username: compilereg
           password: "${{ secrets.PASSWORD }}"
           tags: latest
       
